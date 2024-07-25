@@ -46,13 +46,16 @@ runs:
     - name: Cache ModelSim
       uses: actions/cache@v2
       with:
-        path: $HOME/intelFPGA
+        path: $HOME/modelsim
         key: ${{ runner.os }}-modelsim
     - name: Install ModelSim if not cached
       if: steps.cache-modelsim.outputs.cache-hit != 'true'
       shell: bash
-      run: stat $HOME/intelFPGA/20.1/modelsim_ase || (curl 'https://download.altera.com/akdlm/software/acdsinst/20.1std.1/720/ib_installers/ModelSimSetup-20.1.1.720-linux.run' -o ModelSimSetup.run && chmod +x ModelSimSetup.run && ./ModelSimSetup.run --mode unattended --accept_eula 1 && sed -i 's/linux_rh60/linux/g' $HOME/intelFPGA/20.1/modelsim_ase/vco )
+      run: | 
+        wget https://storage.googleapis.com/open-logic-badges/files/qinst-lite-linux-23.1std.1-993.run
+        ./qinst-lite-linux-23.1std.1-993.run --accept --quiet --noexec --target ./msim_inst
+        ./msim_inst/qinst.sh --install-dir $HOME/modelsim --cli --accept-eula --download-dir ./msin_inst/dowload
     - name: Add ModelSim to PATH
       shell: bash
-      run: echo "$HOME/intelFPGA/20.1/modelsim_ase/bin" >> $GITHUB_PATH
+      run: echo "$HOME/modelsim/bin" >> $GITHUB_PATH
 
