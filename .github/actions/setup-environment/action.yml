@@ -53,6 +53,7 @@ runs:
       shell: bash
       run: | 
         wget https://storage.googleapis.com/open-logic-badges/files/qinst-lite-linux-23.1std.1-993.run
+        chmod +x qinst-lite-linux-23.1std.1-993.run
         ./qinst-lite-linux-23.1std.1-993.run --accept --quiet --noexec --target ./msim_inst
         ./msim_inst/qinst.sh --install-dir $HOME/modelsim --cli --accept-eula --download-dir ./msin_inst/dowload
     - name: Add ModelSim to PATH
