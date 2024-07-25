@@ -52,8 +52,8 @@ runs:
       if: steps.cache-modelsim.outputs.cache-hit != 'true'
       shell: bash
       run: | 
-        wget https://cdrdv2.intel.com/v1/dl/getContent/776289/776292?filename=QuestaSetup-23.1.0.115-linux.run -O questa.run
-        chmod +x questa.run
+        wget https://cdrdv2.intel.com/v1/dl/getContent/776289/776292?filename=QuestaSetup-23.1.0.115-linux.run -O ./questa.run
+        chmod +x ./questa.run
         ./questa.run --mode unattended --installdir $HOME/modelsim --accept_eula 1
     - name: Add ModelSim to PATH
       shell: bash
