@@ -52,8 +52,7 @@ runs:
       if: steps.cache-modelsim.outputs.cache-hit != 'true'
       shell: bash
       run: | 
-        curl -L -o questa.run "https://cdrdv2.intel.com/v1/dl/getContent/776289/776292?filename=QuestaSetup-23.1.0.115-linux.run"
-        file questa.run
+        wget https://storage.googleapis.com/open-logic-badges/files/questa.run -O ./questa.run
         ls -l
         chmod +x ./questa.run
         ./questa.run --mode unattended --installdir $HOME/modelsim --accept_eula 1
