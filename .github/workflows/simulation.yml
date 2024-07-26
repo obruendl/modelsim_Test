@@ -41,6 +41,8 @@ jobs:
           cat $LM_LICENSE_FILE
           cat $VUNIT_MODELSIM_INI
           echo "Blabbi"
+          ls -l $LM_LICENSE_FILE
+          ls -l $VUNIT_MODELSIM_INI
       - name: Run Simulation
         run: |
          source ./.github/workflows/run_simulation.sh
