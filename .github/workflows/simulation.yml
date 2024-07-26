@@ -34,9 +34,9 @@ jobs:
       #Run Simulation
       - name: Modelsim Version
         run: | 
-        vsim -version
-        echo $LM_LICENSE_FILE
-        echo $VUNIT_MODELSIM_INI
+          vsim -version
+          echo $LM_LICENSE_FILE
+          echo $VUNIT_MODELSIM_INI
       - name: Run Simulation
         run: |
          source ./.github/workflows/run_simulation.sh
