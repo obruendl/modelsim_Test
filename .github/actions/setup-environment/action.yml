@@ -79,8 +79,8 @@ runs:
     - name: Configure ModelSim License
       shell: bash
       run: |
-        export LM_LICENSE_FILE=~/modelsim/license.dat
-        export VUNIT_MODELSIM_INI=~/modelsim/questa_fse/modelsim.ini
+        echo "export LM_LICENSE_FILE=~/modelsim/license.dat" >> $GITHUB_ENV
+        echo "export VUNIT_MODELSIM_INI=~/modelsim/questa_fse/modelsim.ini" >> $GITHUB_ENV
 
 
 
