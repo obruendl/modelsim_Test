@@ -45,21 +45,21 @@ runs:
     # Download is ~1.5GB and combined with the installation process it takes over 3 minutes.
     - name: mkdir
       shell: bash
-      run: mkdir -p $HOME/modelsim
+      run: mkdir -p ~/modelsim
     - name: cache-modelsim
       id: cache-modelsim
       uses: actions/cache@v3
       with:
-        path: $HOME/modelsim
+        path: ~/modelsim
         key: ${{ runner.os }}-modelsim
     - name: Install ModelSim if not cached
       if: steps.cache-modelsim.outputs.cache-hit != 'true'
       shell: bash
       run: |
         wget -q https://storage.googleapis.com/open-logic-badges/files/questa.tar.gz
-        tar zxvf questa.tar.gz -C $HOME/modelsim > /dev/null 2>&1
+        tar zxvf questa.tar.gz -C ~/modelsim > /dev/null 2>&1
     - name: Add ModelSim to PATH
       shell: bash
-      run: echo "$HOME/modelsim/questa_fse/bin" >> $GITHUB_PATH
+      run: echo "~/modelsim/questa_fse/bin" >> $GITHUB_PATH
 
 
