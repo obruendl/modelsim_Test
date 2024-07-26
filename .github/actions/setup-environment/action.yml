@@ -52,6 +52,7 @@ runs:
       if: steps.cache-modelsim.outputs.cache-hit != 'true'
       shell: bash
       run: | 
+        mkdir -p $HOME/modelsim
         wget https://storage.googleapis.com/open-logic-badges/files/questa.tar.gz
         tar zxvf questa.tar.gz -C $HOME/modelsim
         ls $HOME/modelsim
