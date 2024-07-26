@@ -36,8 +36,8 @@ jobs:
         run: | 
           vsim -version
           echo "Blubbi"
-          echo $LM_LICENSE_FILE
-          echo $VUNIT_MODELSIM_INI
+          cat $LM_LICENSE_FILE
+          cat $VUNIT_MODELSIM_INI
           echo "Blabbi"
       - name: Run Simulation
         run: |
