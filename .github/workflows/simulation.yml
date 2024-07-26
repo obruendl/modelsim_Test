@@ -36,6 +36,8 @@ jobs:
         run: | 
           vsim -version
           echo "Blubbi"
+          ls -l ~/modelsim
+          echo "dubb"
           cat $LM_LICENSE_FILE
           cat $VUNIT_MODELSIM_INI
           echo "Blabbi"
