@@ -79,8 +79,8 @@ runs:
     - name: Configure ModelSim License
       shell: bash
       run: |
-        echo "LM_LICENSE_FILE=~/modelsim/license.dat" >> $GITHUB_ENV
-        echo "VUNIT_MODELSIM_INI=~/modelsim/questa_fse/modelsim.ini" >> $GITHUB_ENV
+        echo "LM_LICENSE_FILE=$HOME/modelsim/license.dat" >> $GITHUB_ENV
+        echo "VUNIT_MODELSIM_INI=$HOME/modelsim/questa_fse/modelsim.ini" >> $GITHUB_ENV
         sudo chmod -R 777 ~/modelsim
 
 
