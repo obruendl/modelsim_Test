@@ -38,8 +38,6 @@ jobs:
           echo "Blubbi"
           ls -l ~/modelsim
           echo "dubb"
-          cat $LM_LICENSE_FILE
-          cat $VUNIT_MODELSIM_INI
           echo "Blabbi"
           ls -l $LM_LICENSE_FILE
           ls -l $VUNIT_MODELSIM_INI
