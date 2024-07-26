@@ -61,5 +61,21 @@ runs:
     - name: Add ModelSim to PATH
       shell: bash
       run: echo "~/modelsim/questa_fse/bin" >> $GITHUB_PATH
+    # Set up virtual MAC
+    - name: Setup MAC
+      shell: bash
+      run: |
+        sudo apt-get update
+        sudo apt-get install iproute2
+        sudo ip link add link eth0 macvlan0 type macvlan mode bridge
+        sudo ip link set dev macvlan0 address 02:01:02:03:04:08
+        sudo ip link set macvlan0 up
+        sudo ip addr add 192.168.1.100/24 dev macvlan0
+        sudo ip link set macvlan0 up
+    - name: Show MAC
+      shell: bash
+      run: ip addr show macvlan0
+
+
 
 
