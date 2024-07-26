@@ -29,7 +29,7 @@ runs:
       shell: bash
       run: |
         mkdir -p ~/ghdl
-        wget https://github.com/ghdl/ghdl/releases/download/v3.0.0/ghdl-gha-ubuntu-20.04-mcode.tgz
+        wget -q https://github.com/ghdl/ghdl/releases/download/v3.0.0/ghdl-gha-ubuntu-20.04-mcode.tgz
         tar zxvf ghdl-gha-ubuntu-20.04-mcode.tgz -C ~/ghdl
     - name: Add GHDL to PATH
       shell: bash
@@ -54,7 +54,7 @@ runs:
       shell: bash
       run: | 
         mkdir -p $HOME/modelsim
-        wget https://storage.googleapis.com/open-logic-badges/files/questa.tar.gz
+        wget -q https://storage.googleapis.com/open-logic-badges/files/questa.tar.gz
         tar zxvf questa.tar.gz -C $HOME/modelsim
         ls $HOME/modelsim
     - name: Add ModelSim to PATH
