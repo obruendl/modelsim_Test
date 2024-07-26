@@ -35,8 +35,10 @@ jobs:
       - name: Modelsim Version
         run: | 
           vsim -version
+          echo "Blubbi"
           echo $LM_LICENSE_FILE
           echo $VUNIT_MODELSIM_INI
+          echo "Blabbi"
       - name: Run Simulation
         run: |
          source ./.github/workflows/run_simulation.sh
