@@ -81,7 +81,7 @@ runs:
       run: |
         echo "LM_LICENSE_FILE=~/modelsim/license.dat" >> $GITHUB_ENV
         echo "VUNIT_MODELSIM_INI=~/modelsim/questa_fse/modelsim.ini" >> $GITHUB_ENV
-        sudo chmod 777 ~/modelsim/license.dat
+        sudo chmod -R 777 ~/modelsim
 
 
 
