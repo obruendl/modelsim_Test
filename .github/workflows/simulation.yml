@@ -48,3 +48,5 @@ jobs:
         if: always()
         with:
           files: sim/sim_report.xml
+      - name: LS
+        run: ls -l $HOME/modelsim
