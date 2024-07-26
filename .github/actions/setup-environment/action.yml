@@ -80,6 +80,7 @@ runs:
       shell: bash
       run: |
         export LM_LICENSE_FILE=~/modelsim/license.dat
+       export VUNIT_MODELSIM_INI=~/modelsim/questa_fse/modelsim.ini
 
 
 
