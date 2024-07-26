@@ -43,6 +43,9 @@ runs:
         sudo apt-get install lib32z1 lib32stdc++6 libexpat1:i386 libc6:i386 libsm6:i386 libncurses5:i386 libx11-6:i386 zlib1g:i386 libxext6:i386 libxft2:i386
     # Save time on subsequent runs by caching the install of ModelSim.
     # Download is ~1.5GB and combined with the installation process it takes over 3 minutes.
+    - name: mkdir
+      shell: bash
+      run: mkdir -p $HOME/modelsim
     - name: cache-modelsim
       id: cache-modelsim
       uses: actions/cache@v3
@@ -52,11 +55,9 @@ runs:
     - name: Install ModelSim if not cached
       if: steps.cache-modelsim.outputs.cache-hit != 'true'
       shell: bash
-      run: | 
-        mkdir -p $HOME/modelsim
+      run: |
         wget -q https://storage.googleapis.com/open-logic-badges/files/questa.tar.gz
         tar zxvf questa.tar.gz -C $HOME/modelsim > /dev/null 2>&1
-        ls $HOME/modelsim
     - name: Add ModelSim to PATH
       shell: bash
       run: echo "$HOME/modelsim/questa_fse/bin" >> $GITHUB_PATH
