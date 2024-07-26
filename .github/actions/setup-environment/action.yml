@@ -68,13 +68,18 @@ runs:
         sudo apt-get update
         sudo apt-get install iproute2
         sudo ip link add link eth0 macvlan0 type macvlan mode bridge
-        sudo ip link set dev macvlan0 address 02:01:02:03:04:08
+        sudo ip link set dev macvlan0 address 8c:8c:aa:cd:2e:9f
         sudo ip link set macvlan0 up
         sudo ip addr add 192.168.1.100/24 dev macvlan0
         sudo ip link set macvlan0 up
     - name: Show MAC
       shell: bash
       run: ip addr show macvlan0
+    # Configure Modelsim License
+    - name: Configure ModelSim License
+      shell: bash
+      run: |
+        export LM_LICENSE_FILE=~/modelsim/license.dat
 
 
 
